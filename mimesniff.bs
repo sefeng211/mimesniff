@@ -1209,8 +1209,36 @@ algorithm</dfn>:
 
   <li>
    If the three <a>bytes</a> from <var>sequence</var>[8] to
-   <var>sequence</var>[10] are equal to 0x6D 0x70 0x34
-   ("<code>mp4</code>"), return true.
+   <var>sequence</var>[10] are equal to any of the following, return true.
+   <ol>
+    <li>
+     0x6D 0x70 0x34 ("<code>mp4</code>")
+
+    <li>
+     0x61 0x76 0x63 ("<code>avc</code>")
+
+    <li>
+     0x69 0x73 0x6F ("<code>iso</code>")
+
+   </ol>
+
+  <li>
+   If the four <a>bytes</a> from <var>sequence</var>[8] to
+   <var>sequence</var>[11] are equal to any of the following, return true.
+   <ol>
+    <li>
+     0x4D 0x34 0x56 0x20 ("<code>M4V </code>")
+
+    <li>
+     0x4D 0x34 0x41 0x20 ("<code>M4A </code>")
+
+    <li>
+     0x4D 0x34 0x50 0x20 ("<code>M4P </code>")
+
+    <li>
+     0x6D 0x6D 0x70 0x34 ("<code>mmp4</code>")
+
+   </ol>
 
   <li>
    Let <var>bytes-read</var> be 16.
